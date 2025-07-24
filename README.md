@@ -130,6 +130,15 @@ General notes and advices for cobalt strike C2 framework.
   ```
   - **kerberos\*:** Manipulate kerberos tickets.
   - **ppid:** Spoofs the parent process of beacon for any post-exploitation child spawning job. That way we can hide our malicious post-exploitation jobs.
+  ```
+  ppid [pid]
+  ```
+  Use ppid prior to other commands. For example, the below will choose the process running on 6257 as the parent process, then use msiexec.exe as the process to spawn as:
+  ```
+  ppid 6257
+  spawnto x64 C:\Windows\System32\msiexec.exe
+  powerpick Start-Sleep -s 60
+  ```  
   - **psinject:** Inject on a specified process and execute a command using powerpick's functionality. \
   :notebook: Powershell modules imported with **powershell-import** are available.
   - **runu:** Run a command under a spoofed process PID.
