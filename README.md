@@ -133,7 +133,7 @@ General notes and advices for cobalt strike C2 framework.
   ```
   ppid [pid]
   ```
-  Use ppid prior to other commands. For example, the below will choose the process running on 6257 as the parent process, then use msiexec.exe as the process to spawn as:
+  Use ppid prior to other commands. For example, the below will choose the process running on 6257 as the parent process, then use msiexec.exe as the process to spawn as. NOTE: you will keep spawning under the parent process of 6257 unless you run ppid again without any arguements.
   ```
   ppid 6257
   spawnto x64 C:\Windows\System32\msiexec.exe
